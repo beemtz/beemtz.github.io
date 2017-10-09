@@ -33,7 +33,7 @@
 <script>
 export default {
   name: 'calculator',
-  data() {
+  data () {
     return {
       questionCount: 10,
       wrongAnswers: 0,
@@ -41,7 +41,7 @@ export default {
     }
   },
   methods: {
-    adjustAnswers(answers) {
+    adjustAnswers (answers) {
       if (answers === 'right') {
         this.wrongAnswers = this.questionCount - this.rightAnswers
       } else {
@@ -50,7 +50,7 @@ export default {
     }
   },
   computed: {
-    finalGrade() {
+    finalGrade () {
       return parseInt((this.rightAnswers / this.questionCount) * 100).toString() + '%'
     }
   }
