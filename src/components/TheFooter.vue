@@ -1,7 +1,6 @@
 <template>
   <footer class="footer has-text-centered">
-    <p>made with
-      <span>brains</span>
+    <p>made with vue, bulma, and <span>brains</span>.
     </p>
     </div>
   </footer>
@@ -21,6 +20,7 @@ export default {
   color: $pencil;
   background-color: $paper;
   padding: 48px;
+  font-size: 1rem;
 }
 
 span {

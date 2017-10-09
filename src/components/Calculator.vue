@@ -69,6 +69,7 @@ export default {
 .label {
   color: $ballpoint;
   font-family: $sec;
+  font-size: 1rem;
 }
 
 .input {
@@ -77,6 +78,7 @@ export default {
   box-shadow: none;
   font-family: $main;
   color: $pencil;
+  font-size: 1.5rem;
 }
 
 input:focus {
