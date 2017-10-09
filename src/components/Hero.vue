@@ -3,7 +3,8 @@
     <div class="hero-body">
       <div class="container has-text-centered">
         <p class="title">
-          Straight<span>A</span>Grade
+          Straight
+          <span>A</span>Grade
         </p>
         <p class="subtitle">
           First Class Assessment
@@ -20,7 +21,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 @import "../assets/styles/vars";
 
 .title {

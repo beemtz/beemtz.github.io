@@ -6,23 +6,23 @@
         <input class="input is-large" type="number" v-model="questionCount" @input="adjustAnswers('wrong')">
       </div>
     </div>
-   <div class="columns">
-     <div class="column">
-    <div class="field">
-      <label class="label">Wrong Answers</label>
-      <div class="control">
-        <input class="input is-large" type="number" v-model="wrongAnswers" @input="adjustAnswers('wrong')">
+    <div class="columns">
+      <div class="column">
+        <div class="field">
+          <label class="label">Wrong Answers</label>
+          <div class="control">
+            <input class="input is-large" type="number" v-model="wrongAnswers" @input="adjustAnswers('wrong')">
+          </div>
+        </div>
       </div>
+      <div class="column">
+        <div class="field">
+          <label class="label">Right Answers</label>
+          <div class="control">
+            <input class="input is-large" type="number" v-model="rightAnswers" @input="adjustAnswers('right')">
+          </div>
+        </div>
       </div>
-    </div>
-     <div class="column">
-    <div class="field">
-      <label class="label">Right Answers</label>
-      <div class="control">
-        <input class="input is-large" type="number" v-model="rightAnswers" @input="adjustAnswers('right')">
-      </div>
-    </div>
-    </div>
     </div>
     <div class="grade has-text-centered">
       {{ finalGrade }}
@@ -33,7 +33,7 @@
 <script>
 export default {
   name: 'calculator',
-  data () {
+  data() {
     return {
       questionCount: 10,
       wrongAnswers: 0,
@@ -41,7 +41,7 @@ export default {
     }
   },
   methods: {
-    adjustAnswers (answers) {
+    adjustAnswers(answers) {
       if (answers === 'right') {
         this.wrongAnswers = this.questionCount - this.rightAnswers
       } else {
@@ -50,7 +50,7 @@ export default {
     }
   },
   computed: {
-    finalGrade () {
+    finalGrade() {
       return parseInt((this.rightAnswers / this.questionCount) * 100).toString() + '%'
     }
   }
@@ -69,7 +69,6 @@ export default {
 .label {
   color: $ballpoint;
   font-family: $sec;
-
 }
 
 .input {
@@ -79,10 +78,11 @@ export default {
   font-family: $main;
   color: $pencil;
 }
-input:focus { 
-    outline: none !important;
-    border-color: $pencil;
-    box-shadow: 0 0 10px $pencil;
+
+input:focus {
+  outline: none !important;
+  border-color: $pencil;
+  box-shadow: 0 0 10px $pencil;
 }
 
 .grade {
@@ -90,5 +90,4 @@ input:focus {
   font-size: 6rem;
   color: $grade;
 }
-
 </style>

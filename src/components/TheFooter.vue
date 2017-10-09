@@ -1,8 +1,10 @@
 <template>
-<footer class="footer has-text-centered">
-      <p>made with <span>brains</span></p>
-  </div>
-</footer>
+  <footer class="footer has-text-centered">
+    <p>made with
+      <span>brains</span>
+    </p>
+    </div>
+  </footer>
 </template>
 
 <script>
@@ -12,7 +14,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 @import "../assets/styles/vars";
 
 .footer {
