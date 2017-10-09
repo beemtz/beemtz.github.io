@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-     <hero></hero>
+    <hero></hero>
     <router-view></router-view>
+    <the-footer></the-footer>
   </div>
 </template>
 
 <script>
 import Hero from '@/components/Hero'
+import TheFooter from '@/components/TheFooter'
 
 export default {
   name: 'app',
   components: {
-    Hero
+    Hero,
+    TheFooter
   }
 }
 </script>

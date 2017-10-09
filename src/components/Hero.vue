@@ -1,12 +1,12 @@
 <template>
   <section class="hero">
     <div class="hero-body">
-      <div class="container">
+      <div class="container has-text-centered">
         <p class="title">
-          fanZgrader
+          Straight<span>A</span>Grade
         </p>
         <p class="subtitle">
-          useful and not ugly
+          First Class Assessment
         </p>
       </div>
     </div>
@@ -23,4 +23,19 @@ export default {
 
 @import "../assets/styles/vars";
 
+.title {
+  font-family: $marks;
+  color: $ballpoint;
+  font-size: 3rem;
+}
+
+span {
+  color: $grade;
+}
+
+.subtitle {
+  font-family: $sec;
+  color: $pencil;
+  line-height: 3rem;
+}
 </style>

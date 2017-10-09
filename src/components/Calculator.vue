@@ -3,22 +3,28 @@
     <div class="field">
       <label class="label">Number of Questions</label>
       <div class="control">
-        <input class="input" type="number" v-model="questionCount" @input="adjustAnswers('wrong')">
+        <input class="input is-large" type="number" v-model="questionCount" @input="adjustAnswers('wrong')">
       </div>
     </div>
+   <div class="columns">
+     <div class="column">
     <div class="field">
       <label class="label">Wrong Answers</label>
       <div class="control">
-        <input class="input" type="number" v-model="wrongAnswers" @input="adjustAnswers('wrong')">
+        <input class="input is-large" type="number" v-model="wrongAnswers" @input="adjustAnswers('wrong')">
+      </div>
       </div>
     </div>
+     <div class="column">
     <div class="field">
       <label class="label">Right Answers</label>
       <div class="control">
-        <input class="input" type="number" v-model="rightAnswers" @input="adjustAnswers('right')">
+        <input class="input is-large" type="number" v-model="rightAnswers" @input="adjustAnswers('right')">
       </div>
     </div>
-    <div class="grade">
+    </div>
+    </div>
+    <div class="grade has-text-centered">
       {{ finalGrade }}
     </div>
   </div>
@@ -57,15 +63,32 @@ export default {
 
 .container {
   background-color: $paper;
+  margin: 25px
 }
 
 .label {
   color: $ballpoint;
+  font-family: $sec;
+
+}
+
+.input {
+  border: none;
+  border-radius: 0%;
+  box-shadow: none;
+  font-family: $main;
+  color: $pencil;
+}
+input:focus { 
+    outline: none !important;
+    border-color: $pencil;
+    box-shadow: 0 0 10px $pencil;
 }
 
 .grade {
   font-family: $marks;
-  font-size: 3rem;
+  font-size: 6rem;
   color: $grade;
 }
+
 </style>
