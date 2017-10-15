@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container is-fluid">
     <div class="field">
       <label class="label">Number of Questions</label>
       <div class="control">
