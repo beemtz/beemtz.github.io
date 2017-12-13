@@ -1,15 +1,12 @@
 <template>
   <footer class="footer">
     <div class="columns">
-      <div class="column has-text-centered"><a href="https://twitter.com/thebeeletter" target="_blank"> <icon name="twitter" scale=">.1"></icon></a>
-      <p>Rants</p>
+       <div class="column has-text-centered"><a href="https://twitter.com/thebeeletter" target="_blank"> <icon name="twitter" scale="1.5"></icon></a>
       </div>
   <div class="column has-text-centered year">
     <span> © {{ new Date().getFullYear() }} </span>
-    <p>Made by Bee, with help from the internet.</p>
   </div> 
-       <div class="column has-text-centered"><a href="https://github.com/beemtz/fanzgrader" target="_blank"> <icon name="github" scale="1"></icon></a>
-       <p>Repo</p>
+       <div class="column has-text-centered"><a href="https://github.com/beemtz/fanzgrader" target="_blank"> <icon name="github" scale="1.5"></icon></a>
        </div>
   </div>
 </div>
@@ -30,8 +27,8 @@ export default {
   color: $paper;
   background-color: $ballpoint;
   padding: 48px;
-  font-size: .8rem;
-  line-height: 2rem
+  font-size: 1.5rem;
+  line-height: 1.5rem
 }
 
 a, .year span {
