@@ -51,6 +51,7 @@ export default {
   },
   computed: {
     finalGrade () {
+      this.questionCount = this.questionCount > 0 ? this.questionCount : 1
       return parseInt((this.rightAnswers / this.questionCount) * 100).toString() + '%'
     }
   }
