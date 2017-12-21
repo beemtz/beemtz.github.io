@@ -3,7 +3,7 @@
     <div class="field">
       <label class="label">Number of Questions</label>
       <div class="control">
-        <input class="input is-large" type="number" v-model="questionCount" @input="adjustAnswers('wrong')">
+        <input class="input is-large" type="number" v-model="questions" @input="adjustAnswers('wrong')" min="0">
       </div>
     </div>
     <div class="columns">
@@ -11,7 +11,7 @@
         <div class="field">
           <label class="label">Wrong Answers</label>
           <div class="control">
-            <input class="input is-large" type="number" v-model="wrongAnswers" @input="adjustAnswers('wrong')">
+            <input class="input is-large" type="number" v-model="wrongAnswers" @input="adjustAnswers('wrong')" min="0">
           </div>
         </div>
       </div>
@@ -19,7 +19,7 @@
         <div class="field">
           <label class="label">Right Answers</label>
           <div class="control">
-            <input class="input is-large" type="number" v-model="rightAnswers" @input="adjustAnswers('right')">
+            <input class="input is-large" type="number" v-model="rightAnswers" @input="adjustAnswers('right')" min="0">
           </div>
         </div>
       </div>
@@ -35,7 +35,7 @@ export default {
   name: 'calculator',
   data () {
     return {
-      questionCount: 10,
+      questions: 10,
       wrongAnswers: 0,
       rightAnswers: 10
     }
@@ -43,15 +43,25 @@ export default {
   methods: {
     adjustAnswers (answers) {
       if (answers === 'right') {
-        this.wrongAnswers = this.questionCount - this.rightAnswers
+        if (this.rightAnswers <= this.questionCount) {
+          this.wrongAnswers = this.questionCount - this.rightAnswers
+        } else {
+          this.rightAnswers = this.questionCount
+        }
       } else {
-        this.rightAnswers = this.questionCount - this.wrongAnswers
+        if (this.wrongAnswers <= this.questionCount) {
+          this.rightAnswers = this.questionCount - this.wrongAnswers
+        } else {
+          this.wrongAnswers = this.questionCount
+        }
       }
     }
   },
   computed: {
+    questionCount () {
+      return this.questions > 0 ? this.questions : 1
+    },
     finalGrade () {
-      this.questionCount = this.questionCount > 0 ? this.questionCount : 1
       return parseInt((this.rightAnswers / this.questionCount) * 100).toString() + '%'
     }
   }
